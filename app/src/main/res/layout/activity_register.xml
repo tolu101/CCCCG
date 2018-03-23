@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.cg.Register">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="90dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backarrow"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="90dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="235dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="16dp"
+
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+
+</android.support.constraint.ConstraintLayout>

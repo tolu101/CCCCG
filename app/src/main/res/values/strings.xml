@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CG</string>
+    <string name="intrologo">CG</string>
+    <string name="tea">CG</string>
+    <string name="username">CG</string>
+    <string name="password">CG</string>
+    <string name="signinbutton">CG</string>
+    <string name="register">CG</string>
+
 </resources>
