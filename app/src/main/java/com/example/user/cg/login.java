@@ -2,9 +2,13 @@ package com.example.user.cg;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 
 public class login extends AppCompatActivity {
 
+
+    Button SignInbtn,
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
