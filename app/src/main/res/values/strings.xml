@@ -6,5 +6,8 @@
     <string name="password">CG</string>
     <string name="signinbutton">CG</string>
     <string name="register">CG</string>
+    <string name="Noaccountcreateone">CG</string>
+    <string name="signin">CG</string>
+
 
 </resources>

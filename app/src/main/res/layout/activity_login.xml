@@ -1,72 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.user.cg.login">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
-        android:contentDescription="@string/tea"
-        android:src="@drawable/tea"
-        android:id="@+id/imageView" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:contentDescription="@string/username"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:singleLine="true" />
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/password"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:singleLine="true" />
 
-    <TextView
-        android:id="@+id/txtNoAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
-        android:clickable="true"
-        android:contentDescription="@string/register"
-        android:text="No account yet? Create one"
-        android:contextClickable="true"
-        android:focusable="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"
+            android:contentDescription="@string/tea"
+            android:src="@drawable/tea"
+            android:id="@+id/imageView" />
 
-    <Button
-        android:id="@+id/SignInbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="18dp"
-        android:contentDescription="@string/signinbutton"
-        android:text="Sign In"
-        />
 
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id= "@+id/edtPhone"
+            android:hint="phone number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="04988772544"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp"
+            android:inputType="phone"
+            app:met_maxCharacters="11"
+
+            />
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id= "@+id/edtPassword"
+            android:hint="password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="124"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp"
+            android:inputType="textPassword"
+            app:met_maxCharacters="11"
+            />
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:contentDescription="@string/username"
+            android:ems="10"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/txtNoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:clickable="true"
+            android:contentDescription="@string/register"
+            android:text="@string/Noaccountcreateone"
+            android:focusable="true" />
+
+
+
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/SignInbtn"
+            android:text="Sign In"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:buttonColor="@color/btnSignUp"
+            app:shadowColor="@android:color/white"
+            app:shadowEnabled="true"
+            app:shadowHeight="5dp"
+            app:cornerRadius="4dp"
+            />
+
+
+    </LinearLayout>
 
 </RelativeLayout>
