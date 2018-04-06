@@ -1,6 +1,7 @@
 package com.example.user.cg;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.cg.Model.User;
+import com.example.user.cg.common.Common;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,21 +57,30 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         //check if user not exist in database
-                        if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+                        if (dataSnapshot.child(edtPhone.getText().toString()).exists()) {
 
 
                             //Get user information
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
-                                Toast.makeText(login.this, "Sign in successfully!", Toast.LENGTH_SHORT).show();
-                            } else {
+
+
+                                {
+                                    Intent homeIntent = new Intent(login.this, Drawer.class);
+                                    Common.currentUser = user;
+                                    startActivity(homeIntent);
+                                    finish();
+                                }
+                            }else
+                        {
                                 Toast.makeText(login.this, "Sign in failed!", Toast.LENGTH_SHORT).show();
                             }
 
                         }
                         else
                         {
+                            mDialog.dismiss();
                             Toast.makeText(login.this, "user not exist in Database", Toast.LENGTH_SHORT).show();
 
                         }

@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:contentDescription="@string/intrologo"
-        android:src="@drawable/Group"
+        android:src="@drawable/group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
