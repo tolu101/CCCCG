@@ -1,5 +1,6 @@
 package com.example.user.cg;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,15 +50,14 @@ public class Foodlist_1 extends AppCompatActivity {
         if(getIntent() !=null)
             categoryId = getIntent().getStringExtra("CategoryId");
         if (!categoryId.isEmpty() && categoryId !=null)
-            (
+
                     loadlistFood(categoryId);
 
-                    )
     }
 
     private void loadlistFood(String categoryId) {
         adapter = new FirebaseRecyclerAdapter<Food1, FoodViewHolder>(Food1.class, R.layout.food1_item, FoodViewHolder.class,
-                foodList.orderByChild("MenuId").equalTo(categoryId) // like:Select from foofs where MenuId =
+                foodList.orderByChild("MenuId").equalTo(categoryId) // like:Select from foods where MenuId =
                 ) {
             @Override
             protected void populateViewHolder(FoodViewHolder viewHolder, Food1 model, int position) {
@@ -70,7 +70,10 @@ public class Foodlist_1 extends AppCompatActivity {
                 viewHolder.setItemClickListener(new itemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Foodlist_1.this, ""+local.getName(), Toast.LENGTH_SHORT).show();
+                        //start new activity
+                        Intent foodDetail = new Intent(Foodlist_1.this, FoodDetail.class);
+                        foodDetail.putExtra("FoodId",adapter.getRef(position).getKey()); //send food ID to new activity
+                        startActivity(foodDetail);
 
                     }
                 });
@@ -80,7 +83,7 @@ public class Foodlist_1 extends AppCompatActivity {
 
         //set adapter
         Log.d("TAG", ""+adapter.getItemCount());
-        recyclerView.setAdapter(adapter)s;
+        recyclerView.setAdapter(adapter);
 
 
     }
