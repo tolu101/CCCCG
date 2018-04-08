@@ -3,7 +3,6 @@ package com.example.user.cg;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.user.cg.Model.Category;
 import com.example.user.cg.ViewHolder.MenuViewHolder;
@@ -152,10 +150,18 @@ public class Drawer extends AppCompatActivity
         if (id == R.id.nav_menu) {
             // Handle the camera action
         } else if (id == R.id.nav_cart) {
+            Intent cartIntent = new Intent(Drawer.this,Cart.class);
+            startActivity(cartIntent);
 
         } else if (id == R.id.nav_order) {
+            Intent orderIntent = new Intent(Drawer.this,OrderStatus.class);
+            startActivity(orderIntent);
 
         } else if (id == R.id.nav_log_out) {
+            //Logout
+            Intent Login = new Intent(Drawer.this, Login.class);
+            Login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(Login);
 
 
         }

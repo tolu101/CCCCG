@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
 
     Button SignInbtn;
@@ -48,7 +48,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final ProgressDialog mDialog = new ProgressDialog(login.this);
+                final ProgressDialog mDialog = new ProgressDialog(Login.this);
                 mDialog.setMessage("Please waiting....");
                 mDialog.show();
 
@@ -68,21 +68,21 @@ public class login extends AppCompatActivity {
 
 
                                 {
-                                    Intent homeIntent = new Intent(login.this, Drawer.class);
+                                    Intent homeIntent = new Intent(Login.this, Drawer.class);
                                     Common.currentUser = user;
                                     startActivity(homeIntent);
                                     finish();
                                 }
                             }else
                         {
-                                Toast.makeText(login.this, "Sign in failed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Sign in failed!", Toast.LENGTH_SHORT).show();
                             }
 
                         }
                         else
                         {
                             mDialog.dismiss();
-                            Toast.makeText(login.this, "user not exist in Database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "user not exist in Database", Toast.LENGTH_SHORT).show();
 
                         }
                     }
